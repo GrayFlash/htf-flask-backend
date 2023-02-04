@@ -10,8 +10,6 @@ app = Flask(__name__)
 CORS(app)
 nlp = spacy.load("en_core_web_sm")
 links = [
-# 'https://www.tripadvisor.in/Attractions-g297672-Activities-Udaipur_Udaipur_District_Rajasthan.html',
-# 'https://www.tripadvisor.in/Attraction_Review-g297672-d324469-Reviews-City_Palace_of_Udaipur-Udaipur_Udaipur_District_Rajasthan.html',
 # 'https://www.tripadvisor.in/Attractions-g297672-Activities-c42-Udaipur_Udaipur_District_Rajasthan.html',
 # 'https://www.tripadvisor.in/Attractions-g297672-Activities-c47-t10-Udaipur_Udaipur_District_Rajasthan.html',
 # 'https://www.tourism.rajasthan.gov.in/udaipur.html',

@@ -140,8 +140,8 @@ def fetch_geo_details():
     return details
 
 
-def main():
-    print(explore_city())
+# def main():
+#     print(explore_city())
 
 if __name__ == '__main__':
-    main()
+    app.run(host='0.0.0.0', port=8000)

@@ -8,7 +8,7 @@ import wikipedia
 
 app = Flask(__name__)
 CORS(app)
-nlp = spacy.load("en_core_web_sm")
+
 links = [
 # 'https://www.tripadvisor.in/Attractions-g297672-Activities-c42-Udaipur_Udaipur_District_Rajasthan.html',
 # 'https://www.tripadvisor.in/Attractions-g297672-Activities-c47-t10-Udaipur_Udaipur_District_Rajasthan.html',
@@ -74,7 +74,7 @@ def unique_elements(ele):
         unique_ele.append(i)
     return unique_ele
 
-def spacy_ner(text):
+def spacy_ner(text, nlp):
     text = preprocess(text)
     places = []
     doc = nlp(text)
@@ -100,8 +100,9 @@ def explore_city():
     # blogLinks = links
     blog_texts = appyhub_text_extract(blogLinks)
     entities = []
+    nlp = spacy.load("en_core_web_sm")
     for text in blog_texts:
-        place = spacy_ner(text)
+        place = spacy_ner(text, nlp)
         entities = entities + place
 
     entities = unique_elements(entities)
